@@ -1,14 +1,13 @@
 function sorting (arr) {
     let point_A = 0;
-    let point_B = 0;
+    let point_B = arr.length-1;
 
-    while (point_B < arr.length) {
-        if (arr[point_B] === 0) {
+    while (point_A < point_B) {
+        if (arr[point_A] === 1) {
             [arr[point_A],arr[point_B]] = [arr[point_B],arr[point_A]];
-            point_A++;
+            point_B--;
         }
-
-        point_B++;
+            point_A++;
     }
     return arr
 }
