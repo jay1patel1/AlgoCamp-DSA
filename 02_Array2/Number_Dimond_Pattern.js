@@ -27,4 +27,4 @@ const dimondNumberPrint = (num) => {
 dimondNumberPrint(6)
 dimondNumberPrint(3)
 dimondNumberPrint(2)
-dimondNumberPrint(25)
+dimondNumberPrint(1)
