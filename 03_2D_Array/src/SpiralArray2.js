@@ -1,7 +1,8 @@
 const generateMatrix = function(n) {
-    let ansArray = Array(n);
-    for (const key in ansArray) {
-        ansArray[key] = Array(n).fill(0);
+    let ansArray = [];
+
+    for (let i = 0; i < n; i++) {
+        ansArray.push(Array(n).fill(0));
     }
 
     let count = 1;
