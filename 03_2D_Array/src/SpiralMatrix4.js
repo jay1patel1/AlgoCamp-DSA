@@ -11,11 +11,18 @@ const spiralMatrix = function(m, n, head) {
     let rStart = 0;
     let cEnd = ansArray[0].length-1;
     let rEnd = ansArray.length-1;
+    
+    let headVal = [];
+    let li = head
+    while (li != null) {
+        headVal.push(li.val)
+        li = li.next;
+    }
 
     while (count < maxCount && count < head.length) {
         for (let i = cStart; i <= cEnd; i++) {
             if (count < head.length) {
-                ansArray[rStart][i] = head[count];
+                ansArray[rStart][i] = headVal[count];
                 count++;
             }
         }
@@ -25,7 +32,7 @@ const spiralMatrix = function(m, n, head) {
 
         for (let i = rStart; i <= rEnd; i++) {
             if (count < head.length) {
-                ansArray[i][cEnd] = head[count];
+                ansArray[i][cEnd] = headVal[count];
                 count++;
             }
         }
@@ -35,7 +42,7 @@ const spiralMatrix = function(m, n, head) {
 
         for (let i = cEnd; i >= cStart; i--) {
             if (count < head.length) {
-                ansArray[rEnd][i] = head[count];
+                ansArray[rEnd][i] = headVal[count];
                 count++;
             }
         }
@@ -45,7 +52,7 @@ const spiralMatrix = function(m, n, head) {
 
         for (let i = rEnd; i >= rStart; i--) {
             if (count < head.length) {
-                ansArray[i][cStart] = head[count];
+                ansArray[i][cStart] = headVal[count];
                 count++;
             }
         }
