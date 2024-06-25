@@ -18,9 +18,6 @@ const matrixReshape = function(mat, r, c) {
                 if (currentCol > (c-1)) {
                     currentRow++;
                     currentCol = 0;
-                    // if (currentRow >= (r-1)) {
-                    //     return ansArray;
-                    // }
                 }
             }
         }
