@@ -11,7 +11,7 @@ const spiralMatrix = function(m, n, head) {
     let rStart = 0;
     let cEnd = ansArray[0].length-1;
     let rEnd = ansArray.length-1;
-    
+
     let headVal = [];
     let li = head
     while (li != null) {
@@ -19,39 +19,39 @@ const spiralMatrix = function(m, n, head) {
         li = li.next;
     }
 
-    while (count < maxCount && count < head.length) {
+    while (count < maxCount && count < headVal.length) {
         for (let i = cStart; i <= cEnd; i++) {
-            if (count < head.length) {
+            if (count < headVal.length) {
                 ansArray[rStart][i] = headVal[count];
                 count++;
             }
         }
         rStart++;
 
-        if (!(count < maxCount && count < head.length)) break;
+        if (!(count < maxCount && count < headVal.length)) break;
 
         for (let i = rStart; i <= rEnd; i++) {
-            if (count < head.length) {
+            if (count < headVal.length) {
                 ansArray[i][cEnd] = headVal[count];
                 count++;
             }
         }
         cEnd--;
 
-        if (!(count < maxCount && count < head.length)) break;
+        if (!(count < maxCount && count < headVal.length)) break;
 
         for (let i = cEnd; i >= cStart; i--) {
-            if (count < head.length) {
+            if (count < headVal.length) {
                 ansArray[rEnd][i] = headVal[count];
                 count++;
             }
         }
         rEnd--;
 
-        if (!(count < maxCount && count < head.length)) break;
+        if (!(count < maxCount && count < headVal.length)) break;
 
         for (let i = rEnd; i >= rStart; i--) {
-            if (count < head.length) {
+            if (count < headVal.length) {
                 ansArray[i][cStart] = headVal[count];
                 count++;
             }
@@ -61,6 +61,3 @@ const spiralMatrix = function(m, n, head) {
 
     return ansArray;
 };
-
-console.log(spiralMatrix(3,5,[3,0,2,6,8,1,7,9,4,2,5,5,0]));
-console.log(spiralMatrix(1,4,[0,1,2]));
